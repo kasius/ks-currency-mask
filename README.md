@@ -2,6 +2,8 @@
 
 ## Mask separador of thousands fields of entreda in reactive and nonreactive forms, only modifies aesthetically the amount does not modify ngModel or reactive forms
 
+### try DEMO online http://libraries.carloscifuentes.cl/
+
 ## installing the sample
 
 ```bash
