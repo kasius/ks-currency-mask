@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TestLibraryModule } from './test-library/test-library.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+
+import { KsCurrencyMask } from './ks-currency-mask/ks-currency-mask.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +11,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    TestLibraryModule
+    FormsModule,
+    ReactiveFormsModule,
+    KsCurrencyMask
   ],
   providers: [],
   bootstrap: [AppComponent]

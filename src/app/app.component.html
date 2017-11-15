@@ -1,2 +1,5 @@
-<app-test></app-test>
-
+<form #formMasks="ngForm" [formGroup]="formMask">
+  <h3>{{formMask.value | json}}</h3>
+  <input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount" type="text">
+  <h4>{{amount}}</h4>
+</form>
