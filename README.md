@@ -1,11 +1,36 @@
 # ks-currency-mask
 
-Code to accompany the blog post [Publishing a library from an Angular-cli project](https://www.usefuldev.com/blog/post/publishing-a-library-from-an-angular-cli-project).
+## Mask separador of thousands fields of entreda in reactive and nonreactive forms, only modifies aesthetically the amount does not modify ngModel or reactive forms
 
 ## installing the sample
 
 ```bash
 npm install ks-currency-mask --save
+```
+
+## implementation app.module.ts
+
+```bash
+import { KsCurrencyMask } from '../../node_modules/ks-currency-mask/lib/ks-currency-mask.module';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    KsCurrencyMask
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+## use
+```bash
+<input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount" type="text">
 ```
 
 ## working with the repo
