@@ -1,11 +1,12 @@
 
-import { Directive, HostListener, ElementRef, OnInit } from '@angular/core';
+import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/core';
 import { KsCurrencyMaskPipe } from './ks-currency-mask.pipe';
 
 @Directive({ selector: '[ksCurrentFormatter]' })
 export class KsCurrencyMaskDirective implements OnInit {
 
   private el: HTMLInputElement;
+  @Input('prefix') prefix: any;
 
   constructor(
     private elementRef: ElementRef,
@@ -15,17 +16,17 @@ export class KsCurrencyMaskDirective implements OnInit {
   }
 
   ngOnInit() {
-    this.el.value = this.currencyPipe.transform(this.el.value);
+    this.el.value = this.currencyPipe.transform(this.el.value, null, this.prefix);
   }
 
   @HostListener('focus', ['$event.target.value'])
   onFocus(value: any) {
-    this.el.value = this.currencyPipe.parse(value, 0);
+    this.el.value = this.currencyPipe.parse(value, 0, this.prefix);
   }
 
   @HostListener('blur', ['$event.target.value'])
   onBlur(value: any) {
-    this.el.value = this.currencyPipe.transform(value, 0);
+    this.el.value = this.currencyPipe.transform(value, 0, this.prefix);
   }
 
   @HostListener('keypress', ['$event'])

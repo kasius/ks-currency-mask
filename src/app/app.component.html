@@ -1,5 +1,27 @@
 <form #formMasks="ngForm" [formGroup]="formMask">
-  <h3>{{formMask.value | json}}</h3>
-  <input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount" type="text">
-  <h4>{{amount}}</h4>
+  <input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount" type="text"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount" type="text"'
+  <h3>FormBuilder.value: {{formMask.value | json}}</h3>
+  <h3>[(ngModel)]: {{amount}}</h3>
+</form>
+
+<form #formMasksOptions="ngForm" [formGroup]="formMaskOptions">
+  <input ksCurrentFormatter prefix="$" [(ngModel)]="amountPrefix$" formControlName="amount" name="amount" type="text"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="$" [(ngModel)]="amountPrefix" formControlName="amount" name="amount"
+  type="text"
+  <br>
+  <br>
+  <input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amountEuro" name="amountEuro" type="text"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amount" name="amount"
+  type="text"
+  <br>
+  <br>
+  <input ksCurrentFormatter prefix="USD" [(ngModel)]="amountPrefixUsd" formControlName="amountUsd" name="amountUsd" type="text"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="USD" [(ngModel)]="amountPrefix" formControlName="amount"
+  name="amount" type="text"
+  <br>
+  <br>
+  <input ksCurrentFormatter prefix="CLP" [(ngModel)]="amountPrefixClp" formControlName="amountClp" name="amountClp" type="text"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="CLP" [(ngModel)]="amountPrefix" formControlName="amount"
+  name="amount" type="text" name="amount" type="text"'
+  <h3>FormBuilder.value: {{formMaskOptions.value | json}}</h3>
+  <h3>[(ngModel)]: {{amountPrefix$}}</h3>
+  <h3>[(ngModel)]: {{amountPrefix}}</h3>
+  <h3>[(ngModel)]: {{amountPrefixUsd}}</h3>
+  <h3>[(ngModel)]: {{amountPrefixClp}}</h3>
 </form>

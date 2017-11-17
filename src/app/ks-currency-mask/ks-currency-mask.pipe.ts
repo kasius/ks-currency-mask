@@ -18,7 +18,7 @@ export class KsCurrencyMaskPipe implements PipeTransform {
     this.THOUSANDS_SEPARATOR = '.';
   }
 
-  transform(value: number | string, fractionSize: number = 0): string {
+  transform(value: number | string, fractionSize: number = 0, prefix?: any): string {
     let [integer, fraction = ''] = (value || '').toString()
       .split(this.DECIMAL_SEPARATOR);
 
@@ -26,17 +26,26 @@ export class KsCurrencyMaskPipe implements PipeTransform {
       ? this.DECIMAL_SEPARATOR + (fraction + PADDING).substring(0, fractionSize)
       : '';
 
+    if (prefix) {
+      integer = integer.replace(/^/gm, `${prefix} `);
+    }
     integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, this.THOUSANDS_SEPARATOR);
 
     return integer + fraction;
   }
 
-  parse(value: string, fractionSize: number = 0): string {
+  parse(value: string, fractionSize: number = 0, prefix?: string): string {
     const array = value.split('');
     const listAmount: any = [];
     array.forEach(element => {
-      if (element !== this.DECIMAL_SEPARATOR) {
-        listAmount.push(element);
+      if (element !== this.DECIMAL_SEPARATOR && element !== ' ') {
+        if (prefix) {
+          if (prefix.indexOf(element) === -1) {
+            listAmount.push(element);
+          }
+        } else {
+          listAmount.push(element);
+        }
       }
     });
     const stringAmountParse = listAmount.toString();
