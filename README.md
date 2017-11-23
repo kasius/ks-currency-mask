@@ -30,9 +30,31 @@ import { KsCurrencyMask } from '../../node_modules/ks-currency-mask/lib/ks-curre
 export class AppModule { }
 ```
 
-## use
+## use basic
 ```bash
-<input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount" type="text">
+<input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount">
+```
+
+## Simple fraction
+```bash
+<input ksCurrentFormatter decimal="true" [(ngModel)]="amountDecimalSimple" formControlName="amountDecimalSimple" name="amountDecimalSimple">
+```
+
+## Fraction options and rounding
+```bash
+<input ksCurrentFormatter decimal="true" [fraction]="configFraction" [(ngModel)]="amountDecimal" formControlName="amountDecimal" name="amountDecimal">
+```
+
+## Prefix
+```bash
+<input ksCurrentFormatter prefix="$" [(ngModel)]="amountPrefix$" formControlName="amount" name="amount">
+
+<input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amountEuro" name="amountEuro">
+
+<input ksCurrentFormatter prefix="USD" [(ngModel)]="amountPrefixUsd" formControlName="amountUsd" name="amountUsd">
+
+<input ksCurrentFormatter prefix="CLP" [(ngModel)]="amountPrefixClp" formControlName="amountClp" name="amountClp">
+
 ```
 
 ## working with the repo
