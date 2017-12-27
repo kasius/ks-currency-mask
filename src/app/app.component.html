@@ -1,5 +1,5 @@
 <h4>Simple</h4>
-<form #formMasks="ngForm" [formGroup]="formMask">
+<!-- <form #formMasks="ngForm" [formGroup]="formMask">
   <input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount"'
   <h5>FormBuilder.value: {{formMask.value | json}}</h5>
   <h5>[(ngModel)]: {{amount}}</h5>
@@ -7,26 +7,26 @@
 
 <h4>Simple fraction</h4>
 <form #formMask2="ngForm" [formGroup]="formMaskDecimalSimple">
-    default: {{configFractionDefault | json}}<br>
-  <input ksCurrentFormatter decimal="true" [(ngModel)]="amountDecimalSimple" formControlName="amountDecimalSimple" name="amountDecimalSimple"> &nbsp;&nbsp; = &nbsp;&nbsp;'ksCurrentFormatter decimal="true" [(ngModel)]="amountDecimal" formControlName="amountDecimal" name="amountDecimal"'
+  default: {{configFractionDefault | json}}
+  <br>
+  <input ksCurrentFormatter decimal="true" [(ngModel)]="amountDecimalSimple" formControlName="amountDecimalSimple" name="amountDecimalSimple"> &nbsp;&nbsp; = &nbsp;&nbsp;'ksCurrentFormatter decimal="true" [(ngModel)]="amountDecimal" formControlName="amountDecimal"
+  name="amountDecimal"'
   <h4>amountDecimalSimple: {{amountDecimalSimple}}</h4>
 </form>
 
 <h4>Fraction options and rounding</h4>
 <form #formMask3="ngForm" [formGroup]="formMaskDecimal">
-    configFraction: {{configFraction | json}} <br>
-  <input ksCurrentFormatter decimal="true" [fraction]="configFraction" [(ngModel)]="amountDecimal" formControlName="amountDecimal" name="amountDecimal"> &nbsp;&nbsp; = &nbsp;&nbsp;'ksCurrentFormatter decimal="true" [fraction]="configFraction" [(ngModel)]="amountDecimal" formControlName="amountDecimal" name="amountDecimal"'
+  configFraction: {{configFraction | json}}
+  <br>
+  <input ksCurrentFormatter decimal="true" [fraction]="configFraction" [(ngModel)]="amountDecimal" formControlName="amountDecimal"
+    name="amountDecimal"> &nbsp;&nbsp; = &nbsp;&nbsp;'ksCurrentFormatter decimal="true" [fraction]="configFraction" [(ngModel)]="amountDecimal"
+  formControlName="amountDecimal" name="amountDecimal"'
   <h4>amountDecimal: {{amountDecimal}}</h4>
 </form>
 <form #formMasksOptions="ngForm" [formGroup]="formMaskOptions">
   <input ksCurrentFormatter prefix="$" [(ngModel)]="amountPrefix$" formControlName="amount" name="amount"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="$" [(ngModel)]="amountPrefix" formControlName="amount" name="amount"
   type="text"
   <h4>[(ngModel)]: {{amountPrefix$}}</h4>
-  <br>
-  <br>
-  <input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amountEuro" name="amountEuro"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amount" name="amount"
-  type="text"
-  <h4>[(ngModel)]: {{amountPrefix}}</h4>
   <br>
   <br>
   <input ksCurrentFormatter prefix="USD" [(ngModel)]="amountPrefixUsd" formControlName="amountUsd" name="amountUsd"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="USD" [(ngModel)]="amountPrefix" formControlName="amount"
@@ -38,4 +38,11 @@
   name="amount" type="text" name="amount" type="text"'
   <h4>[(ngModel)]: {{amountPrefixClp}}</h4>
   <h4>FormBuilder.value: {{formMaskOptions.value | json}}</h4>
-</form>
+</form> -->
+<div>
+  <input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amount" name="amount"
+  type="text"
+  <h4>[(ngModel)]: {{amountPrefix}}</h4>
+  <br>
+  <br>
+</div>

@@ -40,7 +40,6 @@ export class KsCurrencyMaskPipe implements PipeTransform {
         : '';
       const decimal = fraction;
     }
-
     if (prefix) {
       integer = integer.replace(/^/gm, `${prefix} `);
     }

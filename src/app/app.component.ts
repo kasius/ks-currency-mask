@@ -17,12 +17,13 @@ export class AppComponent implements OnInit {
   public configFraction = { fractionSize: 4, round: true };
   public amount: Number = 10000;
   public amountPrefix$: Number = 10000;
-  public amountPrefix: Number = 123123;
+  public amountPrefix: Number = 0;
   public amountPrefixUsd: Number = 2050000;
   public amountPrefixClp: Number = 1000000;
   public amountDecimal: Number = 10000.346564;
   public amounCuston: Number = 10000;
   public amountDecimalSimple: Number = 10000.346564;
+  public interval: Boolean = false;
 
   constructor(private _fb: FormBuilder) { }
 

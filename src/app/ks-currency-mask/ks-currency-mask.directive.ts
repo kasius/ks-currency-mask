@@ -1,9 +1,9 @@
 
-import { Directive, HostListener, ElementRef, OnInit, Input } from '@angular/core';
+import { Directive, HostListener, ElementRef, OnInit, Input, DoCheck } from '@angular/core';
 import { KsCurrencyMaskPipe } from './ks-currency-mask.pipe';
 
 @Directive({ selector: '[ksCurrentFormatter]' })
-export class KsCurrencyMaskDirective implements OnInit {
+export class KsCurrencyMaskDirective implements OnInit, DoCheck {
 
   private el: HTMLInputElement;
   @Input('prefix') prefix: any;
@@ -12,6 +12,7 @@ export class KsCurrencyMaskDirective implements OnInit {
 
   constructor(
     private elementRef: ElementRef,
+    private la: ElementRef,
     private currencyPipe: KsCurrencyMaskPipe
   ) {
     this.el = this.elementRef.nativeElement;
@@ -19,6 +20,21 @@ export class KsCurrencyMaskDirective implements OnInit {
 
   ngOnInit() {
     this.el.value = this.currencyPipe.transform(this.el.value, this.fraction.fractionSize, this.prefix, this.fraction.round);
+  }
+  // ngAfterViewInit() {
+
+  //     }
+
+  ngDoCheck() {
+    const valLength = this.la.nativeElement.value.length;
+    debugger;
+    console.log('valLength ' + valLength);
+
+    if (valLength > 0) {
+      console.log('dentro del IF');
+    } else {
+      console.log('dentro del ELSE');
+    }
   }
 
   @HostListener('focus', ['$event.target.value'])
