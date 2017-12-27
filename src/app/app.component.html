@@ -1,5 +1,6 @@
 <h4>Simple</h4>
-<!-- <form #formMasks="ngForm" [formGroup]="formMask">
+<button (click)="changeAmount();">Cambiar monto</button>
+<form #formMasks="ngForm" [formGroup]="formMask">
   <input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter [(ngModel)]="amount" formControlName="amount" name="amount"'
   <h5>FormBuilder.value: {{formMask.value | json}}</h5>
   <h5>[(ngModel)]: {{amount}}</h5>
@@ -38,7 +39,7 @@
   name="amount" type="text" name="amount" type="text"'
   <h4>[(ngModel)]: {{amountPrefixClp}}</h4>
   <h4>FormBuilder.value: {{formMaskOptions.value | json}}</h4>
-</form> -->
+</form>
 <div>
   <input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix"> &nbsp;&nbsp; = &nbsp;&nbsp;'input ksCurrentFormatter prefix="€" [(ngModel)]="amountPrefix" formControlName="amount" name="amount"
   type="text"

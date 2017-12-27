@@ -21,19 +21,10 @@ export class KsCurrencyMaskDirective implements OnInit, DoCheck {
   ngOnInit() {
     this.el.value = this.currencyPipe.transform(this.el.value, this.fraction.fractionSize, this.prefix, this.fraction.round);
   }
-  // ngAfterViewInit() {
-
-  //     }
 
   ngDoCheck() {
-    const valLength = this.la.nativeElement.value.length;
-    debugger;
-    console.log('valLength ' + valLength);
-
-    if (valLength > 0) {
-      console.log('dentro del IF');
-    } else {
-      console.log('dentro del ELSE');
+    if (this.el.value.indexOf('.') === -1) {
+      this.el.value = this.currencyPipe.transform(this.el.value, this.fraction.fractionSize, this.prefix, this.fraction.round);
     }
   }
 

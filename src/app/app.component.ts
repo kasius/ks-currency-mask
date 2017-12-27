@@ -52,4 +52,8 @@ export class AppComponent implements OnInit {
   detectType() {
     console.log({ type: this.amounCuston });
   }
+
+  public changeAmount(): void {
+    this.formMaskOptions['controls'].amount.setValue(3357600);
+  }
 }
